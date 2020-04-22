@@ -1,6 +1,6 @@
 {
   "name": "react-keep-visible",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Attempt to keep an element within the viewport as the user scrolls",
   "homepage": "https://github.com/nihlton/react-keep-visible#readme",
   "author": "Greg Archer",

@@ -74,7 +74,7 @@ const KeepVisible = function (props) {
       
       newTop = Math.max(newTop, minPosition)
       newTop = Math.min(newTop, maxPosition)
-      child.style.top = newTop + 'px'
+      child.style.transform = `translateY( ${newTop}px)`
     })
   }
   
