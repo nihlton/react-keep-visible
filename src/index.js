@@ -40,41 +40,33 @@ const KeepVisible = function (props) {
   
       const childRect = child.getBoundingClientRect()
       const parentRect = parent.getBoundingClientRect()
-      const childTop = childRect.top
-      const childHeight = childRect.height
-      const parentTop = parentRect.top
-      const parentHeight = parentRect.height
+      
       const viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-      const fitsInViewPort = childHeight < viewPortHeight
+      const fitsInViewPort = childRect.height < viewPortHeight
   
-      const childAboveViewBottom = (childTop) < (viewPortHeight - childHeight)
-      const childBelowViewTop = (childTop) > 0
+      const childAboveViewBottom = (childRect.top) < (viewPortHeight - childRect.height)
+      const childBelowViewTop = (childRect.top) > 0
       
       const minPosition = 0
-      const maxPosition = Math.max(parentHeight - childHeight, 0)
+      const maxPosition = Math.max(parentRect.height - childRect.height, 0)
   
       let newTop = false
   
-      if (fitsInViewPort) {
-        newTop = -parentTop
-      }
-  
+      if (fitsInViewPort) { newTop = -parentRect.top }
       if (!fitsInViewPort) {
-        if ((notScrolling || scrollingDown) && childAboveViewBottom) {
-          newTop = (-parentTop + viewPortHeight) - childHeight - 5
-        }
         if ((notScrolling || scrollingUp) && childBelowViewTop) {
-          newTop = -parentTop
+          newTop = -parentRect.top
+        }
+        if ((notScrolling || scrollingDown) && childAboveViewBottom) {
+          newTop = (-parentRect.top + viewPortHeight) - childRect.height - 1
         }
       }
       
-      if (!newTop) {
-        return
+      if (newTop !== false) {
+        newTop = Math.max(newTop, minPosition)
+        newTop = Math.min(newTop, maxPosition)
+        child.style.transform = `translateY( ${newTop}px)`
       }
-      
-      newTop = Math.max(newTop, minPosition)
-      newTop = Math.min(newTop, maxPosition)
-      child.style.transform = `translateY( ${newTop}px)`
     })
   }
   
