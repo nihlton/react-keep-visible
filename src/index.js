@@ -6,7 +6,6 @@ const KeepVisible = function (props) {
   let lastScrollPosition
 
   useEffect(() => {
-    childRef.current.style.position = 'relative'
     window.addEventListener('scroll', handleScrollAction)
     window.addEventListener('resize', handleScrollAction)
     positionChild()
