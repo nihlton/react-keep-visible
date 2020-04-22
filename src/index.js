@@ -1,15 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import { cumulativeOffset, elementInViewport, elementPartiallyInViewport } from './util'
-
-
 
 const KeepVisible = function (props) {
   const childRef = useRef()
-
   let alreadyHandling
   let lastScrollPosition
-  let scrollDirection
-
 
   useEffect(() => {
     childRef.current.style.position = 'relative'
