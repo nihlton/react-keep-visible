@@ -21,3 +21,7 @@ or
       </KeepVisible>
 
 ```
+
+## Notes
+
+Margins added to the element kept visible will negatively impact positioning.  Try padding instead.
