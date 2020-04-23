@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 
 const KeepVisible = function (props) {
   const childRef = useRef()
@@ -16,6 +16,8 @@ const KeepVisible = function (props) {
     }
   }, [ childRef ])
 
+  useLayoutEffect(() => positionChild(), [ childRef ])
+  
   const handleScrollAction = () => {
     lastScrollPosition = window.scrollY
     positionChild()
