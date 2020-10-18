@@ -8,7 +8,7 @@ edge to allow scrolling through the entire element.
 
 [live demo](https://codesandbox.io/s/keep-visible-demo-1x1fw?file=/src/App.js)
 
-Vanilla sticky: [counter demo](https://codesandbox.io/s/keep-visible-counter-demo-sumq9?file=/src/App.js) 
+Vanilla sticky counter example: [demo](https://codesandbox.io/s/keep-visible-counter-demo-sumq9?file=/src/App.js) 
 
 
 ## Installation
