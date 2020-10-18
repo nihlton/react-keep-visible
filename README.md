@@ -22,13 +22,14 @@ or
 ## Usage
 
 ```js
-      <KeepVisible>
+      <KeepVisible top={'css value'} bottom={'css value'}>
         [ element ]
       </KeepVisible>
 ```
 
 ## Notes
-
-To do:  support 'top' & 'bottom' offsets.
+- **[ element ]** - and element to keep visible
+- **top**, **bottom** - optional. any valid CSS.  ex: `calc(var(--header-height) + 5vh)`.  Will be evaluated in the context of `[ element ]`.  
+*This may result in unexpected behavior. Proceed with caution.*
 
 Margins added to the element kept visible will negatively impact positioning.  Try padding instead.
