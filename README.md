@@ -5,8 +5,8 @@ Similar to position 'sticky', except it intelligently switches between sticking 
 edge to allow scrolling through the entire element.
 
 [live demo](https://hy8s7j.csb.app/)
-[live demo with editor](https://codesandbox.io/p/sandbox/react-keep-visible-demo-hy8s7j)
 
+[live demo with editor](https://codesandbox.io/p/sandbox/react-keep-visible-demo-hy8s7j)
 
 Vanilla sticky counter example: [demo](https://codesandbox.io/s/keep-visible-counter-demo-sumq9?file=/src/App.js) 
 
